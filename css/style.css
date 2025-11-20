@@ -159,9 +159,10 @@ footer{
         font-size:  1.5rem;/*進一步減小主題字體大小*/
     }
     .footer{
-        font-size:0.5rem;
+        font-size:12px;
     }
 }
+
 
 
 
