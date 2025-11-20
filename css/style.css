@@ -149,6 +149,13 @@ footer{
     .hero-content h1{
         font-size:  1.5rem;/*進一步減小主題字體大小*/
     }
+    .navbar{
+        position: static;/*取消固定定位*/
+    }
+    .container{
+        padding-top: 20px;/*調整導航欄的內邊距*/
+    }
 }
+
 
 
