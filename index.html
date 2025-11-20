@@ -1,0 +1,52 @@
+<!-- 輸入“!”快速生成大致代碼 -->
+<!-- 聲明此文檔是HTML5 同時告訴瀏覽器用HTML5來解釋這個網頁 -->
+<!DOCTYPE html>
+<!-- 表示此頁面主要顯示為English語言 -->
+<html lang="en">
+
+<!-- head部分包含頁面的元信息是不會顯示在頁面上的 -->
+<head>
+<!-- 設置文檔的字符編碼為utf-8 確保一些字符可以正常顯示 -->
+    <meta charset="UTF-8">
+<!-- meta相當於給瀏覽器命令 "name=viewport"就是設置窗口大小 "content=..."就是設置使用的設備適應網頁的寬度 "initial-scale"=初始比列的縮放 "=1.0"就是100%即是不縮放的意思 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 網頁的標題 -->
+    <title>JJ Lin Music World</title>
+<!-- 連接css樣式表 路徑是"css/style.css" -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- body標籤會顯示頁面上的內容 -->
+<body>
+<!-- nav表示導航的區域 class用於樣式識別 -->
+    <nav class="navbar">
+<!-- 給div一個分類 用於包裹導航內容-->
+
+        <div class="nav_container">
+<!-- 給網站logo頁一個類名-->
+            <div class="logo">JJ Lin Music World</div>
+<!-- 無序列表用於製作導航菜單-->
+            <ul class="nav_menu">
+<!-- 三個列表項-->
+                <li><a href="index.html" class="active"> 首頁 </a></li>
+                <li><a href="about.html"> 關於JJ Lin </a></li>
+                <li><a href="join.html"> 加入我們 </a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container"><!-- 外層容器：控制整體寬度和居中 -->
+        <section class="hero"> <!-- 內容區域：語義化區塊 -->
+            <div class="hero-content"><!-- 內容容器：控制內部元素排版 -->
+                <h1>歡迎來到JJLin的音樂世界</h1>
+                <p>一起感受音樂的魅力</p>
+            </div>
+        </section>
+    </div>
+<!-- 頁腳頁面 -->
+    <footer>
+        <p>&copy; 2025 JJ Lin music world. 所有權利保留.</p>
+<!-- &copy; 是版权符号的HTML实体 -->
+    </footer>
+<!-- 引入js文件 -->
+    <script src="js/script.js"></script>
+</body>
+</html>
