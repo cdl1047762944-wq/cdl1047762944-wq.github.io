@@ -135,7 +135,16 @@ footer{
     }
 }
 /*響應式設計：手機設備*/
+/* 響應式設計：手機設備 */
 @media (max-width:480px) {
+    .navbar {
+        position: static; /* 取消固定定位 */
+    }
+    
+    .container {
+        padding-top: 20px; /* 調整頂部內邊距，因為導航欄不再固定 */
+    }
+    
     .nav_menu{
         flex-direction: column;/*垂直排列導航菜單*/
         gap: 10px;/*減少間距*/
@@ -149,13 +158,8 @@ footer{
     .hero-content h1{
         font-size:  1.5rem;/*進一步減小主題字體大小*/
     }
-    .navbar{
-        position: static;/*取消固定定位*/
-    }
-    .container{
-        padding-top: 20px;/*調整導航欄的內邊距*/
-    }
 }
+
 
 
 
