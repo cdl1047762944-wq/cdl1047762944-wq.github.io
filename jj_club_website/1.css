@@ -1,0 +1,142 @@
+/* 这是CSS注释，不会影响样式 */
+
+/* 通配符选择器：选中页面所有元素 */
+* {
+    margin: 0;          /* 清除所有元素的外边距 */
+    padding: 0;         /* 清除所有元素的内边距 */
+    box-sizing: border-box; /* 盒模型设置：宽度包含padding和border */
+}
+
+/* body元素选择器：页面主体样式 */
+body {
+    font-family: 'Arial', sans-serif; /* 字体设置：优先Arial，没有就用系统无衬线字体 */
+    line-height: 1.6;   /* 行高：字号的1.6倍，让文字更易读 */
+    color: #333;        /* 文字颜色：深灰色 */
+    background-color: #f8f9fa; /* 背景颜色：浅灰色 */
+}
+
+/* 类选择器：选择所有class包含"navbar"的元素 */
+.navbar {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); 
+    /* 背景渐变：从紫色(#6a11cb)到蓝色(#2575fc)，135度角度 */
+    padding: 1rem 0;    /* 内边距：上下1rem，左右0 */
+    position: sticky;   /* 粘性定位：滚动时保持可见 */
+    top: 0;            /* 距离顶部0时开始粘住 */
+    z-index: 100;      /* 层级：确保导航栏在最上层 */
+}
+
+.nav-container {
+    max-width: 1200px;  /* 最大宽度：1200像素 */
+    margin: 0 auto;     /* 外边距：上下0，左右自动（实现水平居中） */
+    display: flex;      /* 弹性布局：子元素水平排列 */
+    justify-content: space-between; /* 子元素间距：两端对齐 */
+    align-items: center; /* 子元素垂直居中 */
+    padding: 0 2rem;    /* 内边距：左右2rem */
+}
+
+.logo {
+    color: white;       /* 文字颜色：白色 */
+    font-size: 1.5rem;  /* 字体大小：1.5倍根元素大小 */
+    font-weight: bold;  /* 字体粗细：粗体 */
+}
+
+.nav-menu {
+    display: flex;      /* 弹性布局：让列表项水平排列 */
+    list-style: none;   /* 清除列表默认的圆点样式 */
+}
+
+.nav-menu li {
+    margin-left: 2rem; /* 每个列表项左外边距2rem */
+}
+
+.nav-menu a {
+    color: white;       /* 链接颜色：白色 */
+    text-decoration: none; /* 清除链接下划线 */
+    padding: 0.5rem 1rem; /* 内边距：上下0.5rem，左右1rem */
+    border-radius: 5px; /* 圆角：5像素 */
+    transition: background-color 0.3s ease; /* 过渡动画：背景色变化0.3秒 */
+}
+
+.nav-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+    /* 鼠标悬停时背景色：半透明白色 */
+}
+
+.container {
+    max-width: 1200px;  /* 最大宽度限制 */
+    margin: 2rem auto;  /* 外边距：上下2rem，左右自动居中 */
+    padding: 0 2rem;    /* 内边距：左右2rem */
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('../images/hero-bg.jpg') center/cover no-repeat;
+    /* 背景：黑色半透明渐变层 + 背景图片居中覆盖，不重复 */
+    height: 60vh;       /* 高度：视口高度的60% */
+    display: flex;      /* 弹性布局 */
+    align-items: center;     /* 子元素垂直居中 */
+    justify-content: center; /* 子元素水平居中 */
+    text-align: center;     /* 文字居中 */
+    color: white;       /* 文字颜色：白色 */
+    border-radius: 10px; /* 圆角 */
+    margin-bottom: 2rem; /* 下外边距 */
+}
+
+.hero-content h1 {
+    font-size: 3rem;    /* 大标题字体大小 */
+    margin-bottom: 1rem; /* 下外边距 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文字阴影效果 */
+}
+
+.news-grid {
+    display: grid;      /* 网格布局 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* 网格列：自动适应，最小300px，最大1等分 */
+    gap: 2rem;          /* 网格项间距 */
+    margin: 2rem 0;     /* 外边距：上下2rem */
+}
+
+.news-card {
+    background: white;  /* 背景色：白色 */
+    padding: 1.5rem;    /* 内边距 */
+    border-radius: 10px; /* 圆角 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 盒子阴影 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* 过渡动画：变形和阴影变化 */
+}
+
+.news-card:hover {
+    transform: translateY(-5px); /* 鼠标悬停时向上移动5像素 */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* 加深阴影 */
+}
+
+/* 响应式设计：当屏幕宽度小于768像素时应用这些样式 */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column; /* 弹性布局方向改为垂直 */
+        padding: 0 1rem;       /* 减少内边距 */
+    }
+    
+    .nav-menu {
+        margin-top: 1rem;      /* 上外边距 */
+        flex-direction: column; /* 菜单垂直排列 */
+        width: 100%;           /* 宽度100% */
+    }
+    
+    .nav-menu li {
+        margin: 0.5rem 0;     /* 列表项间距 */
+        text-align: center;   /* 文字居中 */
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;      /* 缩小标题字体 */
+    }
+    
+    .container {
+        padding: 0 1rem;      /* 减少内边距 */
+    }
+    
+    .news-grid {
+        grid-template-columns: 1fr; /* 网格单列布局 */
+    }
+}

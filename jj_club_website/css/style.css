@@ -1,0 +1,116 @@
+/* 重置所有元素的 外邊距 內邊距 更改盒子模型為border-box */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body部分樣式的設置 */
+body {
+    font-family: 'Arial', sans-serif;  /* 字體設置為Arial和無襯線字體 */
+    line-height: 2.0; /* 文字的行高 */
+    color: #333;/*文字顏色*/
+    background-image: url('../images/index.jpg');
+    background-size:cover ;/* 使用cover使圖片覆蓋整個頁面*/
+    background-repeat: no-repeat;/* 不重复背景图片 保持完整显示*/
+    background-attachment: fixed;/*背景固定*/
+    background-position: center;
+} 
+/*導航欄樣式*/
+.navbar{
+    background-color: #42404060; /*設置成半透明顏色的導航欄*/
+    padding: 1rem 0;/*上下內邊距為1rem，左右為0*/
+    position: fixed;/*固定高度使導航欄始終在頂部*/
+    width: 100%;/*寬度為百分之百*/
+    top: 0px;/*距离顶部0像素*/
+    z-index: 1000;/*设置层级确保导航栏在其他内容之上*/
+}
+/*導航欄容器樣式*/
+.nav_container{
+    display: flex;/*使用flex弹性盒子佈局*/
+    justify-content: space-between; /*兩端對其 logo在左菜单在右*/
+    padding: 0 20px;/*左右內邊距為20px*/
+    align-items: center;/*垂直居中對其*/
+    max-width: 1200px;/*设置最大的宽度避免在屏幕上过宽*/
+    margin: 0 auto;/*水平居中对其*/
+}
+/* 頁面logo的樣式 */ 
+.logo{
+    font-size: 1.5rem;/*設置字體大小*/
+    font-weight: 700;/*設置字體粗細為粗體*/
+    color: #fff;/*設置字體顏色*/
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);/*添加文字陰影*/
+}
+/*導航欄菜單樣式*/
+.nav_menu{
+    display:flex;/*使用flex弹性盒子佈局*/
+    list-style: none;/*消除默认的项目符號*/
+    gap: 0px;/*間距0px*/
+}
+/*列表样式*/
+.nav_menu li{
+    flex: 1;/*每個列表項平均分配寬度*/
+    text-align: center;/*文字居中*/
+}
+/*导航链接样式*/
+.nav_menu a {
+    display: block;/*讓鏈接填滿整個li的寬度*/
+    color: #fff;/*設置導航字體顏色*/
+    text-decoration: none;/*取消下劃線*/
+    font-weight: 600;/*調整字體粗細*/
+    padding: 10px 15px;/*設置內邊距*/
+    transition: all 0.3s ease; /* 添加过渡动画效果 */
+    position: relative;/*相對定位*/
+    min-width: 120px;/*设置最小宽度是120px避免文字自动换行*/
+}
+/*導航鏈接的懸停效果*/
+.nav_menu a:hover {
+    color: #9b59b6;/*懸停時字體顏色為紫色*/
+        }
+/*選中狀態：紫色字體*/
+.nav_menu a.active{
+    color: #9b59b6;
+}
+/*當前頁面鏈接下方的紫色指示線*/
+.nav_menu a.active::after{
+    content: ''; /* 伪元素内容为空 */
+    position: absolute; /* 绝对定位 */
+    bottom: -5px; /* 距离底部-5px */
+    left: 50%; /* 从左侧50%开始 */
+    transform: translateX(-50%); /* 水平居中 */
+    width: 20%; /* 宽度为20% */
+    height: 3px; /* 高度为3px */
+    background-color: #9b59b6; /* 紫色背景 */
+    border-radius: 2px; /* 圆角边框 */
+}
+/*主內容容器*/
+.container{
+    max-width: 1200px;/*设置最大宽度为1200px*/
+    margin:0 auto;/*上邊距0 水平居中*/
+    padding: 100px 20px 20px;/*设置内边距 为顶部预留100px给导航栏*/
+    min-height: 100vh;/*為容器設置一個最小的固定高度*/
+}
+/*hero区域样式*/
+.hero{
+    text-align: center;/*文字居中对其*/
+    padding:100px 0;/*设置上下内边距为100px*/
+    color:white;/*颜色文字为白色*/
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);/*添加文字阴影*/
+}
+/*hero区域的内容样式*/
+.hero-content h1{
+    font-size: 3rem;/*设置文字大小*/
+    margin-bottom: 1rem;/*设置底部的外边距*/
+}
+/*hero区域段落样式*/
+.hero-content p{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+/*页脚样式*/
+footer{
+    background-color: rgba(0,0,0,0.7);/*设置页脚背景颜色为半透明的黑色*/
+    color: white;/*文字颜色为白色*/
+    text-align: center;/*文字居中对其*/
+
+}
