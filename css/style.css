@@ -134,3 +134,10 @@ footer{
         font-size: 1.2rem;/*減少段落字體大小*/
     }
 }
+/*響應式設計：手機設備*/
+@media (max-width:480px) {
+    .nav_menu{
+        flex-direction: column;/*垂直排列導航菜單*/
+        gap: 10px;/*減少間距*/
+    }
+}
