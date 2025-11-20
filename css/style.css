@@ -140,4 +140,8 @@ footer{
         flex-direction: column;/*垂直排列導航菜單*/
         gap: 10px;/*減少間距*/
     }
+     .nav_menu a{
+        padding: 8px 12px;/*減少鏈接內邊距*/
+    }
 }
+
