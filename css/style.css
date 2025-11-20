@@ -158,7 +158,11 @@ footer{
     .hero-content h1{
         font-size:  1.5rem;/*進一步減小主題字體大小*/
     }
+    .footer{
+        font-size:0.5rem;
+    }
 }
+
 
 
 
