@@ -114,3 +114,23 @@ footer{
     text-align: center;/*文字居中对其*/
 
 }
+
+/*平板設備的響應式設計*/
+@media(max-width: 768px){
+    .nav_container{
+        flex-direction: column;/*垂直排列導航欄內容*/
+        padding: 10px; /* 減少內邊距*/
+    }
+
+    .nav_menu{
+        gap: 15px;/*減少菜單項間距*/
+        margin-top: 10px;/*添加頂部外邊距*/
+    }
+
+    .hero-content h1{
+        font-size: 2rem;/*減小主標題字體的大小*/
+    }
+    .hero-content p {
+        font-size: 1.2rem;/*減少段落字體大小*/
+    }
+}
