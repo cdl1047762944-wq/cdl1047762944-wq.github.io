@@ -8,13 +8,16 @@
 /* body部分樣式的設置 */
 body {
     font-family: 'Arial', sans-serif;  /* 字體設置為Arial和無襯線字體 */
-    line-height: 2.0; /* 文字的行高 */
+    line-height: 1.6; /* 文字的行高 */
     color: #333;/*文字顏色*/
     background-image: url('../images/index.jpg');
     background-size:cover ;/* 使用cover使圖片覆蓋整個頁面*/
     background-repeat: no-repeat;/* 不重复背景图片 保持完整显示*/
     background-attachment: fixed;/*背景固定*/
     background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 } 
 /*導航欄樣式*/
 .navbar{
@@ -24,6 +27,7 @@ body {
     width: 100%;/*寬度為百分之百*/
     top: 0px;/*距离顶部0像素*/
     z-index: 1000;/*设置层级确保导航栏在其他内容之上*/
+    transition: all 0.3s ease;
 }
 /*導航欄容器樣式*/
 .nav_container{
@@ -86,7 +90,7 @@ body {
 /*主內容容器*/
 .container{
     max-width: 1200px;/*设置最大宽度为1200px*/
-    margin:0 auto;/*上邊距0 水平居中*/
+    margin:80px auto 20px;/*上邊距0 水平居中*/
     padding: 100px 20px 20px;/*设置内边距 为顶部预留100px给导航栏*/
     min-height: 100vh;/*為容器設置一個最小的固定高度*/
 }
@@ -107,13 +111,534 @@ body {
     font-size: 1.5rem;
     margin-bottom: 2rem;
 }
+
+/* 新增：信息卡片區域 */
+.info-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #9b59b6;
+    padding-bottom: 10px;
+}
+
+.card-header h2 {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.card-badge {
+    background: #9b59b6;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.event-item, .song-item, .album-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.event-item:last-child, .song-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.event-item h3, .song-item h3, .album-item h3 {
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.event-date, .event-location, .song-item p, .album-date, .album-tracks {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.event-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #9b59b6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.event-link:hover {
+    color: #8e44ad;
+    text-decoration: underline;
+}
+
+.song-item, .album-item {
+    display: flex;
+    align-items: center;
+}
+
+.song-cover, .album-cover-large {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.song-cover img, .album-cover-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.album-cover-large {
+    width: 100px;
+    height: 100px;
+}
+
+.song-info, .album-details {
+    flex: 1;
+}
+
+.song-stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.album-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.stream-btn, .purchase-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.stream-btn {
+    background: #9b59b6;
+    color: white;
+}
+
+.purchase-btn {
+    background: transparent;
+    border: 1px solid #9b59b6;
+    color: #9b59b6;
+}
+
+.stream-btn:hover {
+    background: #8e44ad;
+}
+
+.purchase-btn:hover {
+    background: #f5f5f5;
+}
+
+/* about頁面專用樣式 */
+.about-section{ /* about區域容器 */
+    background: rgba(255, 255, 255, 0.95);/* 半透明白色背景 */ 
+    border-radius: 15px;/* 圓角邊框*/
+    padding: 40px; /* 內邊距 */
+    margin: 30px 0; /* 上下外邊距 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* 陰影效果 */ 
+}
+
+/*about頁面主標題*/
+.about-section h1{
+    text-align: center; /*文字居中*/
+    color: #333;/*深灰色文字*/
+    font-size: 2.5rem;/*字體大小*/
+    margin-bottom: 30px;/*底部外邊距*/
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);/*輕微的文字陰影*/
+}
+
+/*about內容區域*/
+.about-content{
+    display: flex;/*使用flex佈局*/
+    align-items: flex-start;/*頂部對其*/
+    gap: 40px; /*元素的間距*/
+    flex-wrap: wrap;/*允許換行*/
+    margin-bottom: 40px;
+}
+
+/*about圖片區域*/
+.about-image{
+    flex: 1;/*佔用一份空間*/
+    min-width: 300px;/*最小寬度*/
+}
+
+/*about圖片樣式*/
+.about-image img{
+    width: 100%;/*寬度100%*/
+    height: auto; /* 高度自動 保持比列*/
+    border-radius: 10px; /* 圓角*/
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);/* 陰影效果 */
+}
+
+/*about 文本區域 */
+.about-text {
+    flex: 2;/*佔用兩份空間比圖片區域大*/
+    min-width: 300px;/*最小寬度*/
+}
+
+/*about二級標題*/
+.about-text h2 {
+    color: #9b59b6;/*紫色文字*/
+    margin-bottom: 15px;/*底部外邊距*/
+    font-size: 1.8rem;/*字體大小*/
+}
+
+/*about三級標題*/
+.about-text h3{
+    color: #333; /*顏色深灰色**/
+    margin: 20px 0 10px 0; /*外邊距 上20px 下10px 左右0*/
+    font-size: 1.3rem; /*字體大小 */ 
+}
+
+/*about段落文字*/
+.about-text p{
+    margin-bottom: 15px;/*底部外邊距*/
+    line-height: 1.6;/*行高*/
+    color: #555;/*中灰色字體*/
+}
+
+/*about無序列表*/
+.about-text ul{
+    list-style-type: none; /*移除默認列表樣式*/
+    padding-left: 20px; /*左側內邊距*/
+}
+
+/*about列表項*/
+.about-text li{
+    margin-bottom: 8px0;/*底部外邊距*/
+    position: relative;/*相對定位用於偽元素*/
+    padding-left: 25px;/*左側內邊距 偽圖標預留空間*/
+}
+
+/*about列表項前的圖標 */
+.about-text li::before{
+    content: "🎵";/*使用音樂圖標emoji作為圖標*/
+    position:absolute;/*絕對定位*/
+    left: 0;/*左側對其*/
+}
+
+/* 音樂播放器樣式 */
+.music-player {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.music-player h2 {
+    text-align: center;
+    color: #9b59b6;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(155, 89, 182, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.album-cover {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.album-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.player-controls {
+    width: 100%;
+}
+
+.song-info {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.song-info h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.song-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.progress-container {
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.progress {
+    height: 100%;
+    background: #9b59b6;
+    border-radius: 5px;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.time-display {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.control-btn {
+    background: #9b59b6;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.play-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+}
+
+.control-btn:hover {
+    background: #8e44ad;
+    transform: scale(1.05);
+}
+
+/* join頁面專用樣式*/
+
+/*join區域容器*/
+.join-section{
+    background: rgba(255, 255, 255, 0.95);/*半透明的白色*/
+    border-radius: 15px; /*圓角邊框*/
+    padding: 40px; /*內邊距*/
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);/*陰影效果*/
+    width: 100%;
+    max-width: 600px; /*最大寬度*/
+}
+
+/*join頁面主標題*/
+.join-section h1{
+    text-align: center; /*文字居中*/
+    color: #333;/*深灰色字體*/
+    font-size: 2.5rem;/*字體大小*/
+    margin-bottom: 10px;/*底部外邊距*/
+}
+
+/*join頁面描述文字*/
+.join-section > p {
+    text-align: center;/*文字居中*/
+    color: #666;/*中灰色字體*/
+    margin-bottom: 30px;/*底部外邊距*/
+    font-size: 1.1rem;/*字體大小*/
+}
+
+/*表單容器*/
+.join.form{
+    display: flex;/*使用flex佈局*/
+    flex-direction: column;/*垂直排列*/
+    gap: 25px;/*間距*/
+}
+
+/*表單分組*/
+.join.group{
+    display: flex;/*flex佈局*/
+    flex-direction: column;/*垂直排列*/
+}
+
+/*表單標籤*/
+.form-group label{
+    font-weight: 600; /*字體粗細*/
+    margin-bottom: 8px;/*底部外邊距*/
+    color: #333;/* 深灰色文字 */
+    font-size: 1.1rem;/*字體大小*/
+    min-height: 1.2em; /* 确保标签高度一致 */
+}
+
+/*表單輸入框和文本域*/
+.form-group input,
+.form-group textarea,
+.form-group select{
+    padding: 12px 15px; /* 內邊距 */
+    border: 2px solid #ddd;/*邊框樣式*/
+    border-radius: 8px;/*圓角邊框*/
+    font-size: 1rem;/*字體大小*/
+    transition: all 0.3 ease;/*過渡動畫*/
+    background: rgba(255, 255, 255, 0.9);/*半透明背景*/ 
+    font-family: inherit;
+    width: 100%; /* 确保所有输入框宽度一致 */
+}
+
+/* 表單輸入框獲取焦點時的樣式 */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;/*移除默認輪廓*/
+    border-color: #9b59b6;/*邊框變為紫色*/
+    box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.1);/*添加紫色陰影*/
+    background: white;/*背景變為白色*/
+}
+
+/*表單輸入無效時的樣式（未獲焦點時）*/
+.form-group input:invalid:not(:focus){
+    border-color: #e74c3c;/*邊框變成紅色*/
+
+}
+
+/*文本域特定模式*/
+.form-group textarea{
+    resize: vertical;/*只允許垂直調整大小*/
+    min-height: 120px;/*最小高度*/
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin: 0;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+/* 提交按鈕 */
+button[type="submit"] {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad); /* 紫色漸變背景 */
+    color: white; /* 文字顏色白色 */
+    border: none; /* 無邊框 */
+    padding: 15px 30px; /* 內邊距 */
+    border-radius: 8px; /* 圓角邊框 */
+    font-size: 1.1rem; /* 字體大小 */
+    font-weight: 600; /* 字體粗細 */
+    cursor: pointer; /* 鼠標指針變為手型 */
+    transition: all 0.3s ease; /* 過渡動畫 */
+    margin-top: 10px; /* 頂部外邊距 */
+}
+
+/* 提交按鈕懸停效果 */
+button[type="submit"]:hover {
+    transform: translateY(-2px); /* 向上移動2px */
+    box-shadow: 0 5px 15px rgba(155, 89, 182, 0.4); /* 添加陰影 */
+}
 /*页脚样式*/
 footer{
     background-color: rgba(0,0,0,0.7);/*设置页脚背景颜色为半透明的黑色*/
     color: white;/*文字颜色为白色*/
     text-align: center;/*文字居中对其*/
-
+    padding: 20px 0;/*上下內邊距*/
+    margin-top: 50px;
 }
+
+/* ===== 滾動到頂部按鈕 ===== */
+
+/* 滾動到頂部按鈕 */
+.scroll-to-top {
+    position: fixed; /* 固定定位 */
+    bottom: 30px; /* 距離底部30px */
+    right: 30px; /* 距離右側30px */
+    background: #9b59b6; /* 紫色背景 */
+    color: white; /* 白色文字 */
+    width: 50px; /* 寬度50px */
+    height: 50px; /* 高度50px */
+    border-radius: 50%; /* 圓形 */
+    border: none; /* 無邊框 */
+    cursor: pointer; /* 手型指針 */
+    display: none; /* 默認隱藏 */
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    font-size: 1.5rem; /* 字體大小 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 陰影效果 */
+    transition: all 0.3s ease; /* 過渡動畫 */
+    z-index: 1000; /* 高層級 */
+}
+
+/* 滾動到頂部按鈕懸停效果 */
+.scroll-to-top:hover {
+    background: #8e44ad; /* 深紫色背景 */
+    transform: translateY(-3px); /* 向上移動3px */
+}
+
+/* 滾動到頂部按鈕顯示時的樣式 */
+.scroll-to-top.show {
+    display: flex; /* 顯示按鈕 */
+}
+
+
 
 /*平板設備的響應式設計*/
 @media(max-width: 768px){
@@ -127,14 +652,56 @@ footer{
         margin-top: 10px;/*添加頂部外邊距*/
     }
 
+    /* About內容垂直排列 */
+    .about-content {
+        flex-direction: column; /* 垂直排列 */
+        gap: 20px; /* 減少間距 */
+    }
+
+    /* About和Join區域調整 */
+    .about-section, .join-section {
+        padding: 20px; /* 減少內邊距 */
+        margin: 20px 10px; /* 調整外邊距 */
+    }
+
+     /* 標題字體大小調整 */
+    .about-section h1, .join-section h1 {
+        font-size: 2rem; /* 減小字體大小 */
+    }
+
+    /* 圖片和文本區域寬度調整 */
+    .about-image, .about-text {
+        min-width: 100%; /* 寬度100% */
+    }
+
     .hero-content h1{
         font-size: 2rem;/*減小主標題字體的大小*/
     }
     .hero-content p {
         font-size: 1.2rem;/*減少段落字體大小*/
     }
+    .info-sections {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .player-container {
+        padding: 15px;
+    }
+    
+    .album-cover {
+        width: 150px;
+        height: 150px;
+    }
+    .join-section {
+        padding: 20px;
+        margin: 0 10px;
+    }
+
+    .join-section h1 {
+        font-size: 2rem;
+            }   
 }
-/*響應式設計：手機設備*/
 /* 響應式設計：手機設備 */
 @media (max-width:480px) {
     .navbar {
@@ -143,6 +710,7 @@ footer{
     
     .container {
         padding-top: 20px; /* 調整頂部內邊距，因為導航欄不再固定 */
+        margin-top: 0;
     }
     
     .nav_menu{
@@ -152,20 +720,56 @@ footer{
     .nav_menu a{
         padding: 8px 12px;/*減少鏈接內邊距*/
     }
+    .join-section h1 {
+        font-size: 1.8rem;
+    }
+
     .hero{
         padding: 60px 0;/*減少hero區域的內邊距*/
     }
     .hero-content h1{
         font-size:  1.5rem;/*進一步減小主題字體大小*/
     }
+
+     /* About和Join標題字體大小調整 */
+    .about-section h1, .join-section h1 {
+        font-size: 1.8rem; /* 減小字體大小 */
+    }
+
+     /* 表單輸入框和文本域內邊距調整 */
+    .form-group input, 
+    .form-group textarea,
+    .form-group select {
+        padding: 10px 12px; /* 減少內邊距 */
+    }
+
+    /* 提交按鈕內邊距和字體大小調整 */
+    button[type="submit"] {
+        padding: 12px 25px; /* 減少內邊距 */
+        font-size: 1rem; /* 減小字體大小 */
+    }
     footer {
         font-size: 12px !important; /* 使用 !important 確保覆蓋 */
     }
+     /* 滾動到頂部按鈕位置調整 */
+    .scroll-to-top {
+        bottom: 20px; /* 距離底部20px */
+        right: 20px; /* 距離右側20px */
+        width: 40px; /* 寬度40px */
+        height: 40px; /* 高度40px */
+        font-size: 1.2rem; /* 字體大小調整 */
+    }
+    music-player h2 {
+        font-size: 1.5rem;
+    }
+    
+    .album-cover {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .control-buttons {
+        gap: 10px;
+    }
 }
-
-
-
-
-
-
 
