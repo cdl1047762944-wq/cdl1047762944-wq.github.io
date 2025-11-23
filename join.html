@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加入我們 - JJ Lin Music World</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav_container">
+           <div class="logo">JJ Lin Music World</div>
+           <ul class="nav_menu">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="about.html">關於JJ Lin</a></li>
+                <li><a href="join.html" class="active">加入我們</a></li>
+           </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="join-section">
+            <h1>加入JJ Lin音樂世界</h1>
+            <p>成為我們的一員，一起分享音樂的快樂！</p>
+
+            <form id="joinForm" class="join-form">
+                <div class="form-group">
+                    <label for="name">姓名：</label>
+                    <input type="text" id="name" name="name" required placeholder="請輸入您的姓名">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">電子郵件：</label>
+                    <input type="email" id="email" name="email" required placeholder="請輸入您的電子郵件">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">電話號碼：</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="請輸入您的電話號碼">
+                </div>
+                
+                <div class="form-group">
+                    <label for="interest">興趣領域：</label>
+                    <select id="interest" name="interest" required>
+                        <option value="">請選擇您的興趣領域</option>
+                        <option value="music">音樂創作</option>
+                        <option value="performance">演出表演</option>
+                        <option value="production">音樂製作</option>
+                        <option value="marketing">宣傳推廣</option>
+                        <option value="other">其他</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">為什麼想加入我們：</label>
+                    <textarea name="reason" id="reason" rows="5" required placeholder="請詳細說明您想加入的理由..."></textarea>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">我希望接收JJ Lin的最新消息和活動通知</label>
+                </div>
+
+                <button type="submit">提交申請</button>
+            </form>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 JJ Lin Music World. 所有權利保留</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
