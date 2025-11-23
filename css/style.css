@@ -7,13 +7,13 @@
 
 /* body部分樣式的設置 */
 body {
-    font-family: 'Arial', sans-serif;  /* 字體設置為Arial和無襯線字體 */
-    line-height: 1.6; /* 文字的行高 */
-    color: #333;/*文字顏色*/
+    font-family: 'Arial', sans-serif;  
+    line-height: 1.6; 
+    color: #333;
     background-image: url('../images/index.jpg');
-    background-size:cover ;/* 使用cover使圖片覆蓋整個頁面*/
-    background-repeat: no-repeat;/* 不重复背景图片 保持完整显示*/
-    background-attachment: fixed;/*背景固定*/
+    background-size:cover ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-position: center;
     min-height: 100vh;
     display: flex;
@@ -21,55 +21,55 @@ body {
 } 
 /*導航欄樣式*/
 .navbar{
-    background-color: #42404060; /*設置成半透明顏色的導航欄*/
-    padding: 1rem 0;/*上下內邊距為1rem，左右為0*/
-    position: fixed;/*固定高度使導航欄始終在頂部*/
-    width: 100%;/*寬度為百分之百*/
-    top: 0px;/*距离顶部0像素*/
-    z-index: 1000;/*设置层级确保导航栏在其他内容之上*/
+    background-color: #42404060; 
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 1000;
     transition: all 0.3s ease;
 }
 /*導航欄容器樣式*/
 .nav_container{
-    display: flex;/*使用flex弹性盒子佈局*/
-    justify-content: space-between; /*兩端對其 logo在左菜单在右*/
-    padding: 0 20px;/*左右內邊距為20px*/
-    align-items: center;/*垂直居中對其*/
-    max-width: 1200px;/*设置最大的宽度避免在屏幕上过宽*/
-    margin: 0 auto;/*水平居中对其*/
+    display: flex;
+    justify-content: space-between; 
+    padding: 0 20px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 /* 頁面logo的樣式 */ 
 .logo{
-    font-size: 1.5rem;/*設置字體大小*/
-    font-weight: 700;/*設置字體粗細為粗體*/
-    color: #fff;/*設置字體顏色*/
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);/*添加文字陰影*/
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 /*導航欄菜單樣式*/
 .nav_menu{
-    display:flex;/*使用flex弹性盒子佈局*/
-    list-style: none;/*消除默认的项目符號*/
-    gap: 0px;/*間距0px*/
+    display:flex;
+    list-style: none;
+    gap: 0px;
 }
 /*列表样式*/
 .nav_menu li{
-    flex: 1;/*每個列表項平均分配寬度*/
-    text-align: center;/*文字居中*/
+    flex: 1;
+    text-align: center;
 }
 /*导航链接样式*/
 .nav_menu a {
-    display: block;/*讓鏈接填滿整個li的寬度*/
-    color: #fff;/*設置導航字體顏色*/
-    text-decoration: none;/*取消下劃線*/
-    font-weight: 600;/*調整字體粗細*/
-    padding: 10px 15px;/*設置內邊距*/
-    transition: all 0.3s ease; /* 添加过渡动画效果 */
-    position: relative;/*相對定位*/
-    min-width: 120px;/*设置最小宽度是120px避免文字自动换行*/
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: all 0.3s ease; 
+    position: relative;
+    min-width: 120px;
 }
 /*導航鏈接的懸停效果*/
 .nav_menu a:hover {
-    color: #9b59b6;/*懸停時字體顏色為紫色*/
+    color: #9b59b6;
         }
 /*選中狀態：紫色字體*/
 .nav_menu a.active{
@@ -77,34 +77,34 @@ body {
 }
 /*當前頁面鏈接下方的紫色指示線*/
 .nav_menu a.active::after{
-    content: ''; /* 伪元素内容为空 */
-    position: absolute; /* 绝对定位 */
-    bottom: -5px; /* 距离底部-5px */
-    left: 50%; /* 从左侧50%开始 */
-    transform: translateX(-50%); /* 水平居中 */
-    width: 20%; /* 宽度为20% */
-    height: 3px; /* 高度为3px */
-    background-color: #9b59b6; /* 紫色背景 */
-    border-radius: 2px; /* 圆角边框 */
+    content: ''; 
+    position: absolute; 
+    bottom: -5px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 20%;
+    height: 3px; 
+    background-color: #9b59b6; 
+    border-radius: 2px; 
 }
 /*主內容容器*/
 .container{
-    max-width: 1200px;/*设置最大宽度为1200px*/
-    margin:80px auto 20px;/*上邊距0 水平居中*/
-    padding: 100px 20px 20px;/*设置内边距 为顶部预留100px给导航栏*/
-    min-height: 100vh;/*為容器設置一個最小的固定高度*/
+    max-width: 1200px;
+    margin:80px auto 20px;
+    padding: 100px 20px 20px;
+    min-height: 100vh;
 }
 /*hero区域样式*/
 .hero{
-    text-align: center;/*文字居中对其*/
-    padding:100px 0;/*设置上下内边距为100px*/
-    color:white;/*颜色文字为白色*/
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);/*添加文字阴影*/
+    text-align: center;
+    padding:100px 0;
+    color:white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 /*hero区域的内容样式*/
 .hero-content h1{
-    font-size: 3rem;/*设置文字大小*/
-    margin-bottom: 1rem;/*设置底部的外边距*/
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 /*hero区域段落样式*/
 .hero-content p{
@@ -195,19 +195,35 @@ body {
 
 .song-item, .album-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start; 
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
 }
 
 .song-cover, .album-cover-large {
-    width: 60px;
+    width: 80px;
     height: 60px;
     border-radius: 8px;
     overflow: hidden;
     margin-right: 15px;
     flex-shrink: 0;
 }
-
-.song-cover img, .album-cover-large img {
+.song-cover {
+    width: 120px; 
+    height: 120px; 
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 20px; 
+    flex-shrink: 0;
+    margin-bottom: 20px;
+}
+.song-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.album-cover-large img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -217,18 +233,47 @@ body {
     width: 100px;
     height: 100px;
 }
+.song-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    gap: 8px; 
+}
+.song-info h3 {
+    color: #333;
+    margin-bottom: 0; 
+    font-size: 1.3rem; 
+}
+.song-info p {
+    color: #666;
+    font-size: 1rem; 
+    margin-bottom: 0; 
+}
+.song-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.player-song-info {
+    text-align: center;
+    margin-bottom: 15px;
+}
 
-.song-info, .album-details {
+.player-song-info h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.player-song-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.album-details {
     flex: 1;
 }
 
-.song-stats {
-    display: flex;
-    gap: 15px;
-    margin-top: 5px;
-    font-size: 0.8rem;
-    color: #888;
-}
 
 .album-actions {
     display: flex;
@@ -265,91 +310,84 @@ body {
 }
 
 /* about頁面專用樣式 */
-.about-section{ /* about區域容器 */
-    background: rgba(255, 255, 255, 0.95);/* 半透明白色背景 */ 
-    border-radius: 15px;/* 圓角邊框*/
-    padding: 40px; /* 內邊距 */
-    margin: 30px 0; /* 上下外邊距 */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* 陰影效果 */ 
+.about-section{ 
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 40px;
+    margin: 30px 0; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
 }
 
 /*about頁面主標題*/
 .about-section h1{
-    text-align: center; /*文字居中*/
-    color: #333;/*深灰色文字*/
-    font-size: 2.5rem;/*字體大小*/
-    margin-bottom: 30px;/*底部外邊距*/
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);/*輕微的文字陰影*/
+    text-align: center; 
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /*about內容區域*/
 .about-content{
-    display: flex;/*使用flex佈局*/
-    align-items: flex-start;/*頂部對其*/
-    gap: 40px; /*元素的間距*/
-    flex-wrap: wrap;/*允許換行*/
+    display: flex;
+    align-items: flex-start;
+    gap: 40px; 
+    flex-wrap: wrap;
     margin-bottom: 40px;
 }
 
 /*about圖片區域*/
 .about-image{
-    flex: 1;/*佔用一份空間*/
-    min-width: 300px;/*最小寬度*/
+    flex: 1;
+    min-width: 300px;
 }
 
 /*about圖片樣式*/
 .about-image img{
-    width: 100%;/*寬度100%*/
-    height: auto; /* 高度自動 保持比列*/
-    border-radius: 10px; /* 圓角*/
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);/* 陰影效果 */
+    width: 100%;
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /*about 文本區域 */
 .about-text {
-    flex: 2;/*佔用兩份空間比圖片區域大*/
-    min-width: 300px;/*最小寬度*/
+    flex: 2;
+    min-width: 300px;
 }
 
 /*about二級標題*/
 .about-text h2 {
-    color: #9b59b6;/*紫色文字*/
-    margin-bottom: 15px;/*底部外邊距*/
-    font-size: 1.8rem;/*字體大小*/
+    color: #9b59b6;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
 }
 
 /*about三級標題*/
 .about-text h3{
-    color: #333; /*顏色深灰色**/
-    margin: 20px 0 10px 0; /*外邊距 上20px 下10px 左右0*/
-    font-size: 1.3rem; /*字體大小 */ 
+    color: #333; 
+    margin: 20px 0 10px 0; 
+    font-size: 1.3rem; 
 }
 
 /*about段落文字*/
 .about-text p{
-    margin-bottom: 15px;/*底部外邊距*/
-    line-height: 1.6;/*行高*/
-    color: #555;/*中灰色字體*/
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
 }
 
 /*about無序列表*/
 .about-text ul{
-    list-style-type: none; /*移除默認列表樣式*/
-    padding-left: 20px; /*左側內邊距*/
+    list-style-type: none; 
+    padding-left: 20px; 
 }
 
 /*about列表項*/
 .about-text li{
-    margin-bottom: 8px0;/*底部外邊距*/
-    position: relative;/*相對定位用於偽元素*/
-    padding-left: 25px;/*左側內邊距 偽圖標預留空間*/
-}
-
-/*about列表項前的圖標 */
-.about-text li::before{
-    content: "🎵";/*使用音樂圖標emoji作為圖標*/
-    position:absolute;/*絕對定位*/
-    left: 0;/*左側對其*/
+    margin-bottom: 8px0;
+    position: relative;
+    padding-left: 25px;
 }
 
 /* 音樂播放器樣式 */
@@ -478,86 +516,86 @@ body {
 
 /*join區域容器*/
 .join-section{
-    background: rgba(255, 255, 255, 0.95);/*半透明的白色*/
-    border-radius: 15px; /*圓角邊框*/
-    padding: 40px; /*內邊距*/
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);/*陰影效果*/
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px; 
+    padding: 40px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 600px; /*最大寬度*/
+    max-width: 600px; 
 }
 
 /*join頁面主標題*/
 .join-section h1{
-    text-align: center; /*文字居中*/
-    color: #333;/*深灰色字體*/
-    font-size: 2.5rem;/*字體大小*/
-    margin-bottom: 10px;/*底部外邊距*/
+    text-align: center;
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
 /*join頁面描述文字*/
 .join-section > p {
-    text-align: center;/*文字居中*/
-    color: #666;/*中灰色字體*/
-    margin-bottom: 30px;/*底部外邊距*/
-    font-size: 1.1rem;/*字體大小*/
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
 }
 
 /*表單容器*/
 .join.form{
-    display: flex;/*使用flex佈局*/
-    flex-direction: column;/*垂直排列*/
-    gap: 25px;/*間距*/
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
 /*表單分組*/
 .join.group{
-    display: flex;/*flex佈局*/
-    flex-direction: column;/*垂直排列*/
+    display: flex;
+    flex-direction: column;
 }
 
 /*表單標籤*/
 .form-group label{
-    font-weight: 600; /*字體粗細*/
-    margin-bottom: 8px;/*底部外邊距*/
-    color: #333;/* 深灰色文字 */
-    font-size: 1.1rem;/*字體大小*/
-    min-height: 1.2em; /* 确保标签高度一致 */
+    font-weight: 600; 
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 1.1rem;
+    min-height: 1.2em; 
 }
 
 /*表單輸入框和文本域*/
 .form-group input,
 .form-group textarea,
 .form-group select{
-    padding: 12px 15px; /* 內邊距 */
-    border: 2px solid #ddd;/*邊框樣式*/
-    border-radius: 8px;/*圓角邊框*/
-    font-size: 1rem;/*字體大小*/
-    transition: all 0.3 ease;/*過渡動畫*/
-    background: rgba(255, 255, 255, 0.9);/*半透明背景*/ 
+    padding: 12px 15px; 
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3 ease;
+    background: rgba(255, 255, 255, 0.9);
     font-family: inherit;
-    width: 100%; /* 确保所有输入框宽度一致 */
+    width: 100%; 
 }
 
 /* 表單輸入框獲取焦點時的樣式 */
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-    outline: none;/*移除默認輪廓*/
-    border-color: #9b59b6;/*邊框變為紫色*/
-    box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.1);/*添加紫色陰影*/
-    background: white;/*背景變為白色*/
+    outline: none;
+    border-color: #9b59b6;
+    box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.1);
+    background: white;
 }
 
 /*表單輸入無效時的樣式（未獲焦點時）*/
 .form-group input:invalid:not(:focus){
-    border-color: #e74c3c;/*邊框變成紅色*/
+    border-color: #e74c3c;
 
 }
 
 /*文本域特定模式*/
 .form-group textarea{
-    resize: vertical;/*只允許垂直調整大小*/
-    min-height: 120px;/*最小高度*/
+    resize: vertical;
+    min-height: 120px;
 }
 
 .checkbox-group {
@@ -578,29 +616,29 @@ body {
 
 /* 提交按鈕 */
 button[type="submit"] {
-    background: linear-gradient(135deg, #9b59b6, #8e44ad); /* 紫色漸變背景 */
-    color: white; /* 文字顏色白色 */
-    border: none; /* 無邊框 */
-    padding: 15px 30px; /* 內邊距 */
-    border-radius: 8px; /* 圓角邊框 */
-    font-size: 1.1rem; /* 字體大小 */
-    font-weight: 600; /* 字體粗細 */
-    cursor: pointer; /* 鼠標指針變為手型 */
-    transition: all 0.3s ease; /* 過渡動畫 */
-    margin-top: 10px; /* 頂部外邊距 */
+    background: linear-gradient(135deg, #9b59b6, #8e44ad); 
+    color: white; 
+    border: none;
+    padding: 15px 30px; 
+    border-radius: 8px; 
+    font-size: 1.1rem; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    margin-top: 10px; 
 }
 
 /* 提交按鈕懸停效果 */
 button[type="submit"]:hover {
-    transform: translateY(-2px); /* 向上移動2px */
-    box-shadow: 0 5px 15px rgba(155, 89, 182, 0.4); /* 添加陰影 */
+    transform: translateY(-2px); 
+    box-shadow: 0 5px 15px rgba(155, 89, 182, 0.4); 
 }
 /*页脚样式*/
 footer{
-    background-color: rgba(0,0,0,0.7);/*设置页脚背景颜色为半透明的黑色*/
-    color: white;/*文字颜色为白色*/
-    text-align: center;/*文字居中对其*/
-    padding: 20px 0;/*上下內邊距*/
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
     margin-top: 50px;
 }
 
@@ -608,34 +646,34 @@ footer{
 
 /* 滾動到頂部按鈕 */
 .scroll-to-top {
-    position: fixed; /* 固定定位 */
-    bottom: 30px; /* 距離底部30px */
-    right: 30px; /* 距離右側30px */
-    background: #9b59b6; /* 紫色背景 */
-    color: white; /* 白色文字 */
-    width: 50px; /* 寬度50px */
-    height: 50px; /* 高度50px */
-    border-radius: 50%; /* 圓形 */
-    border: none; /* 無邊框 */
-    cursor: pointer; /* 手型指針 */
-    display: none; /* 默認隱藏 */
-    align-items: center; /* 垂直居中 */
-    justify-content: center; /* 水平居中 */
-    font-size: 1.5rem; /* 字體大小 */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 陰影效果 */
-    transition: all 0.3s ease; /* 過渡動畫 */
-    z-index: 1000; /* 高層級 */
+    position: fixed; 
+    bottom: 30px; 
+    right: 30px; 
+    background: #9b59b6; 
+    color: white; 
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+    border: none; 
+    cursor: pointer; 
+    display: none; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 1.5rem; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease; 
+    z-index: 1000; 
 }
 
 /* 滾動到頂部按鈕懸停效果 */
 .scroll-to-top:hover {
-    background: #8e44ad; /* 深紫色背景 */
-    transform: translateY(-3px); /* 向上移動3px */
+    background: #8e44ad;
+    transform: translateY(-3px); 
 }
 
 /* 滾動到頂部按鈕顯示時的樣式 */
 .scroll-to-top.show {
-    display: flex; /* 顯示按鈕 */
+    display: flex; 
 }
 
 
@@ -643,42 +681,42 @@ footer{
 /*平板設備的響應式設計*/
 @media(max-width: 768px){
     .nav_container{
-        flex-direction: column;/*垂直排列導航欄內容*/
-        padding: 10px; /* 減少內邊距*/
+        flex-direction: column;
+        padding: 10px; 
     }
 
     .nav_menu{
-        gap: 15px;/*減少菜單項間距*/
-        margin-top: 10px;/*添加頂部外邊距*/
+        gap: 15px;
+        margin-top: 10px;
     }
 
     /* About內容垂直排列 */
     .about-content {
-        flex-direction: column; /* 垂直排列 */
-        gap: 20px; /* 減少間距 */
+        flex-direction: column; 
+        gap: 20px; 
     }
 
     /* About和Join區域調整 */
     .about-section, .join-section {
-        padding: 20px; /* 減少內邊距 */
-        margin: 20px 10px; /* 調整外邊距 */
+        padding: 20px; 
+        margin: 20px 10px; 
     }
 
      /* 標題字體大小調整 */
     .about-section h1, .join-section h1 {
-        font-size: 2rem; /* 減小字體大小 */
+        font-size: 2rem; 
     }
 
     /* 圖片和文本區域寬度調整 */
     .about-image, .about-text {
-        min-width: 100%; /* 寬度100% */
+        min-width: 100%; 
     }
 
     .hero-content h1{
-        font-size: 2rem;/*減小主標題字體的大小*/
+        font-size: 2rem;
     }
     .hero-content p {
-        font-size: 1.2rem;/*減少段落字體大小*/
+        font-size: 1.2rem;
     }
     .info-sections {
         grid-template-columns: 1fr;
@@ -705,59 +743,59 @@ footer{
 /* 響應式設計：手機設備 */
 @media (max-width:480px) {
     .navbar {
-        position: static; /* 取消固定定位 */
+        position: static; 
     }
     
     .container {
-        padding-top: 20px; /* 調整頂部內邊距，因為導航欄不再固定 */
+        padding-top: 20px; 
         margin-top: 0;
     }
     
     .nav_menu{
-        flex-direction: column;/*垂直排列導航菜單*/
-        gap: 10px;/*減少間距*/
+        flex-direction: column;
+        gap: 10px;
     }
     .nav_menu a{
-        padding: 8px 12px;/*減少鏈接內邊距*/
+        padding: 8px 12px;
     }
     .join-section h1 {
         font-size: 1.8rem;
     }
 
     .hero{
-        padding: 60px 0;/*減少hero區域的內邊距*/
+        padding: 60px 0;
     }
     .hero-content h1{
-        font-size:  1.5rem;/*進一步減小主題字體大小*/
+        font-size:  1.5rem;
     }
 
      /* About和Join標題字體大小調整 */
     .about-section h1, .join-section h1 {
-        font-size: 1.8rem; /* 減小字體大小 */
+        font-size: 1.8rem; 
     }
 
      /* 表單輸入框和文本域內邊距調整 */
     .form-group input, 
     .form-group textarea,
     .form-group select {
-        padding: 10px 12px; /* 減少內邊距 */
+        padding: 10px 12px; 
     }
 
     /* 提交按鈕內邊距和字體大小調整 */
     button[type="submit"] {
-        padding: 12px 25px; /* 減少內邊距 */
-        font-size: 1rem; /* 減小字體大小 */
+        padding: 12px 25px; 
+        font-size: 1rem; 
     }
     footer {
         font-size: 12px !important; /* 使用 !important 確保覆蓋 */
     }
      /* 滾動到頂部按鈕位置調整 */
     .scroll-to-top {
-        bottom: 20px; /* 距離底部20px */
-        right: 20px; /* 距離右側20px */
-        width: 40px; /* 寬度40px */
-        height: 40px; /* 高度40px */
-        font-size: 1.2rem; /* 字體大小調整 */
+        bottom: 20px; 
+        right: 20px; 
+        width: 40px; 
+        height: 40px; 
+        font-size: 1.2rem; 
     }
     music-player h2 {
         font-size: 1.5rem;
