@@ -1,13 +1,14 @@
-<!DOCTYPE html> <!-- 聲明文檔類型是html5，告訴瀏覽器使用HTML5的規則來解析網頁-->
-<html lang="zh"> <!-- 設置網頁的主語言為English -->
-<head> <!-- 設置頁面的原信息標籤 -->
-    <meta charset="UTF-8"> <!-- 設置字符集為utf-8，支持一些其他的字符顯示 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 設置視口，使網頁在不同設備上正確顯示 -->
-    <title>關於JJ Lin - JJ Lin Music World</title> <!-- 頁面標題 -->
-    <link rel="stylesheet" href="css/style.css"> <!-- 鏈接外部css樣式表 -->
+<!DOCTYPE html> 
+<html lang="zh"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>關於JJ Lin - JJ Lin Music World</title> 
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
 
-<body><!-- 主體標籤 -->
+<body>
+      <!-- 主導航菜單 -->
     <nav class="navbar">
         <div class="nav_container">
            <div class="logo">JJ Lin Music World</div>
@@ -26,8 +27,10 @@
                 <img src="images/about.jpg" alt="">
                 </div>
                 <div class="about-text">
+                     <!-- 藝人簡介 -->
                     <h2>JJ Lin簡介</h2>
                     <p>林俊傑（JJ Lin），1981年3月27日出生於新加坡，華語流行樂男歌手，詞曲創作人，音樂製作人。</p>
+                     <!-- 音樂成就列表 -->
                     <h3>音樂成就</h3>
                     <ul>
                         <li>第15屆台灣金曲獎最佳新人獎</li>
@@ -39,18 +42,20 @@
                     <p>林俊傑的音樂風格多變，涵蓋流行、R&B、搖滾等多種元素，以其獨特的嗓音和深情的演唱風格著稱。</p>
                 </div>
             </div>
+               <!-- 音樂播放器組件 -->
              <div class="music-player">
                 <h2>JJ Lin 熱門歌曲</h2>
                 <div class="player-container">
                     <div class="album-cover">
-                        
-                    </div>
+                        <img src="images/song1.jpg" alt="">
+                    </div>  
                     <div class="player-controls">
-                        <div class="song-info">
+                        <div class="player-song-info">
                             <h3 id="song-title">江南</h3>
                             <p id="song-album">《第二天堂》專輯</p>
                         </div>
                         <audio id="audio-player" src="music/jiangnan.mp3"></audio>
+                         <!-- 播放進度條 -->
                         <div class="progress-container">
                             <div class="progress-bar">
                                 <div class="progress"></div>
@@ -60,6 +65,7 @@
                                 <span id="total-time">0:00</span>
                             </div>
                         </div>
+                          <!-- 播放控制按鈕 -->
                         <div class="control-buttons">
                             <button class="control-btn" id="prev-btn">◀◀</button>
                             <button class="control-btn play-btn" id="play-btn">▶</button>
