@@ -21,7 +21,25 @@ document.addEventListener('DOMContentLoaded', function(){ // 頁面加載完成�
                 navbar.style.background = 'rgba(66,64,64,0.6)';
             }
         }
-         const scrollBtn = document.querySelector('.scroll-to-top'); // 獲取滾動到頂部按鈕
+        const scrollBtn = document.querySelector('.scroll-to-top'); // 獲取滾動到頂部按鈕
+
+         // 添加串流和购买按钮功能
+        const streamBtn = document.getElementById('stream-btn');
+        const buyAlbumBtn = document.getElementById('buy-album-btn')
+        
+        if(streamBtn) {
+            streamBtn.addEventListener('click', function() {
+                // 跳转到串流平台
+                window.open('https://y.qq.com/n/ryqq/albumDetail/004ZOIop1doXru', '_blank');
+            });
+        }
+        
+        if(buyAlbumBtn) {
+            buyAlbumBtn.addEventListener('click', function() {
+                // 跳转到购买页面
+                window.open('https://i2.y.qq.com/n3/cm/pages/putao/product_detail/index.html?productID=1198772461422142&business=putao', '_blank');
+            });
+        }
 
           // 如果按鈕存在
         if(scrollBtn) {
@@ -93,7 +111,7 @@ function initMusicPlayer() {
     const progressBar = document.querySelector('.progress');
     const currentTimeEl = document.getElementById('current-time');
     const totalTimeEl = document.getElementById('total-time');
-    const albumImg = document.getElementById('album-img');
+    const albumImg = document.querySelector('.album-cover img');
     const songTitle = document.getElementById('song-title');
     const songAlbum = document.getElementById('song-album');
 
@@ -127,12 +145,24 @@ function initMusicPlayer() {
         const song = songs[index];
         audioPlayer.src = song.src;
         albumImg.src = song.cover;
+        // 确保图片元素存在再设置src
+        if (albumImg) {
+            albumImg.src = song.cover;
+            albumImg.alt = song.title;
+        }
+
         songTitle.textContent = song.title;
         songAlbum.textContent = song.album;
         
         // 重置進度條
         progressBar.style.width = '0%';
         currentTimeEl.textContent = '0:00';
+        totalTimeEl.textContent = '0:00';
+
+        // 加载元数据获取总时长
+        audioPlayer.addEventListener('loadedmetadata', function() {
+            totalTimeEl.textContent = formatTime(audioPlayer.duration);
+        }, { once: true });
     }
     
     // 播放/暫停
@@ -141,7 +171,9 @@ function initMusicPlayer() {
             audioPlayer.pause();
             playBtn.textContent = '▶';
         } else {
-            audioPlayer.play();
+            audioPlayer.play().catch(error => {
+                console.error('播放失败:', error);
+            });
             playBtn.textContent = '❚❚';
         }
         isPlaying = !isPlaying;
@@ -155,7 +187,7 @@ function initMusicPlayer() {
         
         // 更新時間顯示
         currentTimeEl.textContent = formatTime(currentTime);
-        if (duration) {
+        if (duration && !isNaN(duration)) {
             totalTimeEl.textContent = formatTime(duration);
         }
     }
@@ -165,30 +197,57 @@ function initMusicPlayer() {
         const width = this.clientWidth;
         const clickX = e.offsetX;
         const duration = audioPlayer.duration;
-        
-        audioPlayer.currentTime = (clickX / width) * duration;
+
+        if (duration && !isNaN(duration)) {
+            audioPlayer.currentTime = (clickX / width) * duration;
+        }
     }
     
     // 下一首
     function nextSong() {
+        // 先停止当前播放
+        audioPlayer.pause();
+
         currentSongIndex = (currentSongIndex + 1) % songs.length;
         loadSong(currentSongIndex);
+
+         // 如果是播放状态，立即播放新歌曲
         if (isPlaying) {
-            audioPlayer.play();
+            // 确保新歌曲加载完成后再播放
+            audioPlayer.addEventListener('canplay', function onCanPlay() {
+                audioPlayer.play().catch(error => {
+                    console.error('播放失败:', error);
+                });
+                audioPlayer.removeEventListener('canplay', onCanPlay);
+            }, { once: true });
+        } else {
+            // 如果不是播放状态，更新按钮状态
+            playBtn.textContent = '▶';
         }
     }
     
     // 上一首
     function prevSong() {
+        audioPlayer.pause();
+
         currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
         loadSong(currentSongIndex);
+
         if (isPlaying) {
-            audioPlayer.play();
+             audioPlayer.addEventListener('canplay', function onCanPlay() {
+                audioPlayer.play().catch(error => {
+                    console.error('播放失败:', error);
+                });
+                audioPlayer.removeEventListener('canplay', onCanPlay);
+            }, { once: true });
+        } else {
+            playBtn.textContent = '▶';
         }
     }
     
     // 格式化時間
     function formatTime(seconds) {
+        if (isNaN(seconds)) return '0:00';
         const mins = Math.floor(seconds / 60);
         const secs = Math.floor(seconds % 60);
         return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
@@ -201,11 +260,30 @@ function initMusicPlayer() {
         nextBtn.addEventListener('click', nextSong);
         audioPlayer.addEventListener('timeupdate', updateProgress);
         audioPlayer.addEventListener('ended', nextSong);
+        audioPlayer.addEventListener('loadstart', function() {
+            currentTimeEl.textContent = '0:00';
+            progressBar.style.width = '0%';
+        });
         
         const progressContainer = document.querySelector('.progress-bar');
-        progressContainer.addEventListener('click', setProgress);
-        
+        if (progressContainer) {
+            progressContainer.addEventListener('click', setProgress);
+        }   
         // 加載第一首歌
         loadSong(currentSongIndex);
     }
+}
+
+function saveToLocalStorage(formData) {
+    // 获取现有数据或初始化空数组
+    const existingData = JSON.parse(localStorage.getItem('formSubmissions')) || [];
+    
+    // 添加新数据
+    existingData.push(formData);
+    
+    // 保存回本地存储
+    localStorage.setItem('formSubmissions', JSON.stringify(existingData));
+    
+    console.log('数据已保存到本地存储');
+    console.log('所有提交的数据:', existingData);
 }
